@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');
+
+%card {
+	background-color: #F7FF58;
+	width: 50vh;
+	padding-top: 25vh;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.Menu {
+	background-color: #A9CBB7;
+	width: 100px;
+	height: 100px;
+	min-width: 100px;
+	min-height: 100px;
+	border-radius: 50%;
+
+	position: relative;
+	left: 80%;
+}
+
+.TitlePageContainer {
+	width: 100vw;
+	height: 100vh;
+
+	background-color: #EFECCA;
+}
+
+.TitleText{
+	position: relative;
+	left: 18%;
+	font-size: 20vh;
+	font-family: 'La Belle Aurore', serif;
+}
+
+.VideoCard {
+	@extend %card;
+
+	position: relative;
+	left: 18%;
+	bottom: 10%;
+}
