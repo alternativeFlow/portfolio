@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans');
+@import 'card';
+
+.AspectRatioBox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+
+	display: grid;
+	grid:
+		"grid" 100% 
+		/ 100%;
+}
+
+.FlexBoxCentering {
+	position: relative;
+	grid-area: grid;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100%
+}
+
+.VideoCard {
+	@extend %card;
+	grid-area: grid;
+	
+	display: block;
+	bottom: 10%;
+	overflow: hidden;
+
+	&.clicked {
+		transform: rotateY(180deg);
+	}
+}
+
+.Video {
+	position: absolute;
+	top: 0;
+	left: 0;
+
+	transition: opacity .01s .49s;
+
+	&.clicked {
+		opacity: 0;
+	}
+}
+
+.VideoText {
+	font-size: 2.5vh;
+	color: white;
+	font-family: 'Open Sans', serif;
+
+	transition: opacity .01s .49s;
+
+	&.clicked {
+		opacity: 0;
+	}
+}
+
+.VideoTextFlipped {
+	font-size: 2.5vh;
+	color: white;
+	font-family: 'Open Sans', serif;
+
+	transform: rotateY(180deg);
+
+	opacity: 0;
+	transition: opacity .01s .5s;
+
+	&.clicked {
+		opacity: 1;
+	}
+}

@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans");
+.VideoCard {
+  background-color: #F7FF58;
+  width: 50vh;
+  padding-top: 25vh;
+  position: relative;
+  box-shadow: 0.5vh 1vh 2vh rgba(0, 0, 0, 0.25);
+  transition: transform 1s linear;
+}
+
+.AspectRatioBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid: "grid" 100%/100%;
+}
+
+.FlexBoxCentering {
+  position: relative;
+  grid-area: grid;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.VideoCard {
+  grid-area: grid;
+  display: block;
+  bottom: 10%;
+  overflow: hidden;
+}
+.VideoCard.clicked {
+  transform: rotateY(180deg);
+}
+
+.Video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.01s 0.49s;
+}
+.Video.clicked {
+  opacity: 0;
+}
+
+.VideoText {
+  font-size: 2.5vh;
+  color: white;
+  font-family: "Open Sans", serif;
+  transition: opacity 0.01s 0.49s;
+}
+.VideoText.clicked {
+  opacity: 0;
+}
+
+.VideoTextFlipped {
+  font-size: 2.5vh;
+  color: white;
+  font-family: "Open Sans", serif;
+  transform: rotateY(180deg);
+  opacity: 0;
+  transition: opacity 0.01s 0.5s;
+}
+.VideoTextFlipped.clicked {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=VideoCard.css.map */

@@ -1,12 +1,4 @@
 @import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans");
-.VideoCard {
-  background-color: #F7FF58;
-  width: 50vh;
-  padding-top: 25vh;
-  position: relative;
-  box-shadow: 0.5vh 1vh 2vh rgba(0, 0, 0, 0.25);
-}
-
 html {
   background-color: black;
 }
@@ -22,21 +14,16 @@ body {
   background-color: red;
 }
 
-.FlexBoxCentering {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-}
-
 .TitlePageContainer {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
   background-color: #EFECCA;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .TitleText {
@@ -44,43 +31,9 @@ body {
   margin-bottom: 10vh;
   padding: 0;
   position: relative;
-  left: 18%;
+  bottom: 10%;
   font-size: 20vh;
   font-family: "La Belle Aurore", serif;
-}
-
-.VideoCard {
-  display: block;
-  left: 18%;
-  bottom: 10%;
-  overflow: hidden;
-}
-
-.VideoCardAspectRatioBox {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.Video {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.VideoText {
-  font-size: 1vh;
-  color: white;
-  font-family: "Open Sans", serif;
-}
-
-.VideoTextFlipped {
-  font-size: 1vh;
-  color: white;
-  font-family: "Open Sans", serif;
-  transform: rotateY(180deg);
 }
 
 .WorkPageContainer {

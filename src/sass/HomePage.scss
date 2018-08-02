@@ -25,24 +25,6 @@ body {
 	background-color: red;
 }
 
-.AspectRatioBox {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
-.FlexBoxCentering {
-	position: relative;
-
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	height: 100%
-}
-
 
 //1/3 of page
 
@@ -55,6 +37,11 @@ body {
 	background-color: #EFECCA;
 
 	z-index: 1;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .TitleText{
@@ -63,39 +50,10 @@ body {
 	padding: 0;
 
 	position: relative;
-	left: 18%;
+	bottom: 10%;
 	font-size: 20vh;
 	font-family: 'La Belle Aurore', serif;
 
-}
-
-.VideoCard {
-	@extend %card;
-
-	display: block;
-	left: 18%;
-	bottom: 10%;
-	overflow: hidden;
-}
-
-.Video {
-	position: absolute;
-	top: 0;
-	left: 0;
-}
-
-.VideoText {
-	font-size: 2.5vh;
-	color: white;
-	font-family: 'Open Sans', serif;
-}
-
-.VideoTextFlipped {
-	font-size: 2.5vh;
-	color: white;
-	font-family: 'Open Sans', serif;
-
-	transform: rotateY(180deg);
 }
 
 // 2/3 of page

@@ -104,7 +104,6 @@
 .Menu {
   margin: 0;
   padding: 0;
-  padding-top: 2vh;
   width: 20vh;
   min-width: 15vh;
   max-width: 25vh;
@@ -112,7 +111,7 @@
   max-height: 25vh;
   overflow: visible;
   position: relative;
-  left: 80%;
+  left: 35%;
 }
 
 /*# sourceMappingURL=Menu.css.map */
