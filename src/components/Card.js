@@ -10,6 +10,7 @@ class Card extends React.Component {
 			ClassNames: {
 				Card: this.props.card,
 				CardTitle: 'CardTitle',
+				CardImage: 'CardImage',
 				CardTextFlipped: 'CardTextFlipped',
 				CardLinksFlipped: 'CardLinksFlipped'
 			}
@@ -46,9 +47,20 @@ class Card extends React.Component {
 			<div className={this.state.ClassNames.Card} onClick={this.handleClick}>
 				<div className="AspectRatioBox">
 					<div className="FlexBoxCentering">
-						<p className={this.state.ClassNames.CardTitle}>
-							{this.props.cardTitle}
-						</p>
+						{ this.props.cardTitle ? (
+							<p className={this.state.ClassNames.CardTitle}>
+								{this.props.cardTitle}
+							</p>
+							) : (
+							<div></div>
+						)}
+						{ this.props.cardImage ? (
+							<div className={this.state.ClassNames.CardImage}>
+								{this.props.cardImage}
+							</div>
+							) : (
+							<div></div>
+						)}
 					</div>
 					<div className="FlexBoxCentering">
 						<p className={this.state.ClassNames.CardTextFlipped}>
@@ -67,6 +79,7 @@ class Card extends React.Component {
 Card.propTypes = {
 	card: PropTypes.string.isRequired,
 	cardTitle: PropTypes.string,
+	cardImage: PropTypes.element,
 	cardTextFlipped: PropTypes.element,
 	cardLinksFlipped: PropTypes.element
 }

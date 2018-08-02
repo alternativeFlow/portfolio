@@ -51,6 +51,7 @@ body {
 	padding: 0;
 
 	position: relative;
+	color: white;
 	font-size: 20vh;
 	font-family: 'La Belle Aurore', serif;
 
@@ -67,7 +68,8 @@ body {
 	width: 100vw;
 	height: 125vh;
 
-	background-color: #5E565A;
+	background: url(../assets/woodCover.jpg) no-repeat center center local;
+	background-size: cover;
 
 	z-index: 2;
 
@@ -84,9 +86,9 @@ body {
 	position: relative;
 	bottom: 10vh;
 	
+	color: white;
 	font-size: 20vh;
 	font-family: 'La Belle Aurore', serif;
-
 }
 
 .CardLevel {
@@ -107,7 +109,33 @@ body {
 	width: 100vw;
 	height: 102vh;
 
-	background-color: white;
+	display: grid;
+	grid:
+		". 			title	." auto
+		". 			card 	." 25vh
+		"contact 	contact contact" 50%
+		/ auto 50vh auto;
+
+	background-color: #ce8f5a;
 
 	z-index: 3;
+}
+
+.ContactTitleText {
+	grid-area: title;
+
+	margin: 0;
+	padding: 0;
+	
+	color: white;
+	font-size: 20vh;
+	font-family: 'La Belle Aurore', serif;
+}
+
+.ContactBox {
+	grid-area: contact;
+
+	background-color: #6287a2;
+
+	z-index: 4;
 }

@@ -6,6 +6,9 @@ import Menu from './Menu';
 import VideoCard from './VideoCard';
 import Card from './Card';
 
+import portfolioVideo from '../assets/portfolioVideo.mp4';
+import portfolioPic from '../assets/profilepic.jpg';
+
 class HomePage extends React.Component {
 	constructor(props) {
 		super(props);
@@ -86,9 +89,20 @@ class HomePage extends React.Component {
 		return(
 			<div className="Container" ref={this.containerRef}>
 				<div className="TitlePageContainer" ref={this.titlePageRef}>
+					<video className='Video' muted loop autoPlay>
+						<source src={portfolioVideo} type="video/mp4"/>
+					</video>
 					<Menu />
 					<p className="TitleText">Developer</p>
-					<VideoCard />
+					<Card 
+						card="CardTitlePage" 
+						cardTitle="Click Me!"
+						cardTextFlipped={
+							<p>
+								Check the backs for more info!
+							</p>
+						}
+					/>
 				</div>
 				<div className="WorkPageContainer" ref={this.workPageRef}>
 					<p className="WorkTitleText">Work</p>
@@ -114,7 +128,8 @@ class HomePage extends React.Component {
 										</a>
 									</div>
 								</div>
-							}/>
+							}
+						/>
 						<Card 
 							card="CardPortfolio" 
 							cardTitle="Portfolio"
@@ -123,7 +138,20 @@ class HomePage extends React.Component {
 									This site built with:
 									<br/>React/ES6/CSS3/SASS
 								</p>
-							}/>
+							}
+							cardLinksFlipped={
+								<div style={{display: 'contents'}}>
+									<div className='CardLinkItem'>
+										<a className='fa fa-github' href='https://www.github.com'>
+										</a>
+									</div>
+									<div className='CardLinkItem'>
+										<a className='fa fa-google' href='https://www.google.com'>
+										</a>
+									</div>
+								</div>
+							}
+						/>
 					</div>
 					<div className="CardLevel">
 						<Card 
@@ -134,10 +162,39 @@ class HomePage extends React.Component {
 									Alternate Portfolios:
 									<br/>Built with same stack as this portfolio
 								</p>
-							}/>
+							}
+							cardLinksFlipped={
+								<div style={{display: 'contents'}}>
+									<div className='CardLinkItem'>
+										<a className='fa fa-github' href='https://www.github.com'>
+										</a>
+									</div>
+									<div className='CardLinkItem'>
+										<a className='fa fa-google' href='https://www.google.com'>
+										</a>
+									</div>
+								</div>
+							}
+						/>
 					</div>
 				</div>
 				<div className="ContactPageContainer" ref={this.contactPageRef}>
+					<p className="ContactTitleText">
+						Contact
+					</p>
+					<Card 
+						card="CardContactPage" 
+						cardImage={
+							<img src={portfolioPic} style={{width: '10vh', height: '10vh', 'border-radius': '50%'}}/>
+						}
+						cardTextFlipped={
+							<p>
+								“It's a dangerous business, Frodo, going out your door. You step onto the road, and if you don't keep your feet, there's no knowing where you might be swept off to.” ― J.R.R. Tolkien, The Lord of the Rings	
+							</p>
+						}
+					/>
+					<div className="ContactBox">
+					</div>
 				</div>
 			</div>
 

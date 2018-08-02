@@ -2,6 +2,18 @@
 @import 'card-shared';
 @import 'utilityClasses';
 
+.CardTitlePage {
+	@extend %card;
+	bottom: 7vh;
+
+	&.clicked {
+		transition: transform 1s linear, box-shadow 0.01s .5s;
+		transform: rotateY(180deg);
+		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+
+	}
+}
+
 .CardEthRiddle {
 	@extend %card;
 	bottom: 12vh;
@@ -39,6 +51,21 @@
 	}
 }
 
+.CardContactPage {
+	@extend %card;
+	grid-area: card;
+
+	z-index: 3;
+
+	transform: translate(-1vh, 11vh) rotate(55deg);
+
+	&.clicked {
+		transition: transform 1s linear, box-shadow 0.01s .5s;
+		transform: translate(-1vh, 15vh) rotate(55deg) rotateY(180deg);
+		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+	}
+}
+
 .CardTitle {
 	font-size: 10vh;
 	font-family: 'Open Sans', serif;
@@ -47,6 +74,16 @@
 
 	&.clicked {
 		opacity: 0;
+	}
+}
+
+.CardImage {
+	transition: opacity 0.01s .49s;
+
+	&.clicked {
+		opacity: 0;
+		transition: opacity 0.01s .5s;
+
 	}
 }
 
@@ -83,8 +120,11 @@
 	transition: opacity 0.01s .5s;
 	opacity: 0;
 
+	pointer-events: none;
+
 	&.clicked {
 		opacity: 1;
+		pointer-events: auto;
 	}
 
 }
