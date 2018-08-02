@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans");
+.CardMisc, .CardPortfolio, .CardEthRiddle {
+  background-color: white;
+  width: 50vh;
+  padding-top: 25vh;
+  position: relative;
+  box-shadow: 0.5vh 1vh 2vh rgba(0, 0, 0, 0.4);
+  transition: transform 1s linear;
+}
+.clicked.CardMisc, .clicked.CardPortfolio, .clicked.CardEthRiddle {
+  transform: rotateY(180deg);
+}
+
+.AspectRatioBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid: "grid" 100%/100%;
+}
+
+.FlexBoxCentering {
+  position: relative;
+  grid-area: grid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.CardEthRiddle {
+  bottom: 12vh;
+  right: 4vh;
+  transform: rotate(42deg);
+}
+
+.CardPortfolio {
+  bottom: 10vh;
+  left: 2vh;
+}
+
+.CardMisc {
+  transform: rotate(-20deg);
+}
+
+.CardTitle {
+  font-size: 10vh;
+  font-family: "Open Sans", serif;
+}
+
+/*# sourceMappingURL=Card.css.map */

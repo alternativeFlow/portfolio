@@ -13,7 +13,6 @@
   position: relative;
   grid-area: grid;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -30,7 +29,7 @@ body {
 
 .Container {
   width: 100vw;
-  height: 200vh;
+  height: 175vh;
 }
 
 .TitlePageContainer {
@@ -61,9 +60,29 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
-  height: 150vh;
+  height: 125vh;
   background-color: #5E565A;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.WorkTitleText {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  bottom: 10vh;
+  font-size: 20vh;
+  font-family: "La Belle Aurore", serif;
+}
+
+.CardLevel {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .ContactPageContainer {
@@ -75,7 +94,6 @@ body {
   width: 100vw;
   height: 102vh;
   background-color: white;
-  color: black;
   z-index: 3;
 }
 

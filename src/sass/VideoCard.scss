@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans');
-@import 'card';
+@import 'card-shared';
 @import 'utilityClasses';
 
 .VideoCard {
@@ -9,10 +9,6 @@
 	bottom: 10%;
 	overflow: hidden;
 	background-color: green;
-
-	&.clicked {
-		transform: rotateY(180deg);
-	}
 }
 
 .Video {

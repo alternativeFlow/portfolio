@@ -1,19 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import "../CSS/VideoCard.css";
+import "../CSS/Card.css";
 
-import portfolioVideo from '../assets/portfolioVideo.mp4';
-
-class VideoCard extends React.Component {
+class Card extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			clicked: 'false',
 			ClassNames: {
-				VideoCard: 'VideoCard',
-				Video: 'Video',
-				VideoText: 'VideoText',
-				VideoTextFlipped: 'VideoTextFlipped'
+				Card: this.props.card,
+				CardTitle: 'CardTitle'
 			}
 		};
 	}
@@ -44,20 +40,16 @@ class VideoCard extends React.Component {
 	render() {
 
 		return(
-			<div className={this.state.ClassNames.VideoCard} onClick={this.handleClick}>
+			<div className={this.state.ClassNames.Card}>
 				<div className="AspectRatioBox">
-					<video className={this.state.ClassNames.Video} muted loop autoPlay>
-						<source src={portfolioVideo} type="video/mp4"/>
-					</video>
 					<div className="FlexBoxCentering">
-						<p className={this.state.ClassNames.VideoText}>
-							Click Me!
+						<p className={this.state.ClassNames.CardTitle}>
+							{this.props.cardTitle}
 						</p>
 					</div>
 					<div className="FlexBoxCentering">
-						<p className={this.state.ClassNames.VideoTextFlipped}>
-							Check the backs for more info!
-						</p>
+					</div>
+					<div className="FlexBoxCentering">
 					</div>
 				</div>
 			</div>
@@ -65,4 +57,8 @@ class VideoCard extends React.Component {
 	}
 }
 
-export default VideoCard;
+Card.propTypes = {
+	card: PropTypes.string.isRequired,
+	cardTitle: PropTypes.string
+}
+export default Card;

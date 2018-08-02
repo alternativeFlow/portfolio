@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans');
+@import 'card-shared';
+@import 'utilityClasses';
+
+.CardEthRiddle {
+	@extend %card;
+	bottom: 12vh;
+	right: 4vh;
+	transform: rotate(42deg);
+}
+
+.CardPortfolio {
+	@extend %card;
+	bottom: 10vh;
+	left: 2vh;
+}
+
+.CardMisc {
+	@extend %card;
+	transform: rotate(-20deg);
+}
+
+.CardTitle {
+	font-size: 10vh;
+	font-family: 'Open Sans', serif;
+}
