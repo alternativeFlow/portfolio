@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore");
+.MenuItemTwo, .MenuItemOne {
+  margin: 0;
+  padding: 0;
+  width: 20vh;
+  min-width: 15vh;
+  max-width: 25vh;
+  position: relative;
+  font-size: 8vh;
+  font-family: "La Belle Aurore", serif;
+  top: 4vh;
+  opacity: 0;
+}
+.clicked.MenuItemTwo, .clicked.MenuItemOne {
+  top: 7vh;
+  opacity: 1;
+}
+
+.MenuButtonBar::after, .MenuButtonBar::before, .MenuButtonBar {
+  width: 100%;
+  height: 25%;
+  background-color: white;
+  border-radius: 35%;
+  display: block;
+}
+
+.MenuButton {
+  width: 20vh;
+  padding-top: 20vh;
+  min-width: 15vh;
+  max-width: 25vh;
+  position: relative;
+}
+
+.MenuButton:hover .MenuButtonBar {
+  background-color: transparent;
+}
+.MenuButton:hover .MenuButtonBar::before,
+.MenuButton:hover .MenuButtonBar::after {
+  top: 0;
+}
+.MenuButton:hover .MenuButtonBar::before {
+  transform: rotate(45deg);
+}
+.MenuButton:hover .MenuButtonBar::after {
+  transform: rotate(-45deg);
+}
+
+.MenuButtonBar {
+  position: absolute;
+  display: block;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.MenuButtonBar::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: -150%;
+  transition: transform 0.5s, top 0.5s;
+}
+.MenuButtonBar::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  top: 150%;
+  transition: transform 0.5s, top 0.5s;
+}
+
+.MenuButtonBar.clicked {
+  background-color: transparent;
+}
+
+.MenuButtonBar.clicked::before,
+.MenuButtonBar.clicked::after {
+  top: 0;
+}
+
+.MenuButtonBar.clicked::before {
+  transform: rotate(45deg);
+}
+
+.MenuButtonBar.clicked::after {
+  transform: rotate(-45deg);
+}
+
+.MenuItemOne {
+  transition: top 1s 0.3s, opacity 1s 0.3s;
+}
+.MenuItemOne.clicked {
+  transition: top 1s, opacity 1s;
+}
+
+.MenuItemTwo {
+  transition: top 1s, opacity 1s;
+}
+.MenuItemTwo.clicked {
+  transition: top 1s 0.3s, opacity 1s 0.3s;
+}
+
+.Menu {
+  margin: 0;
+  padding: 0;
+  padding-top: 2vh;
+  width: 20vh;
+  min-width: 15vh;
+  max-width: 25vh;
+  min-height: 15vh;
+  max-height: 25vh;
+  overflow: visible;
+  position: relative;
+  left: 80%;
+}
+
+/*# sourceMappingURL=Menu.css.map */

@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore');
+
+@mixin absolute-center {
+	position: absolute;
+	display: block;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto;
+}
+
+%menu-item {
+	margin: 0;
+	padding: 0;
+	width: 20vh;
+	min-width: 15vh;
+	max-width: 25vh;
+
+	position: relative;
+
+	font-size: 8vh;
+	font-family: 'La Belle Aurore', serif;
+
+	//4vh -> 7vh slide in
+	top: 4vh;
+
+	opacity: 0;
+
+	&.clicked {
+		top: 7vh;
+		opacity: 1;
+	}
+}
+
+%menu-button-bar {
+	width: 100%;
+	height: 25%;
+
+	background-color: white;
+	border-radius: 35%;
+
+	display: block;
+}
+
+.MenuButton {
+	width: 20vh;
+	padding-top: 20vh;
+	min-width: 15vh;
+	max-width: 25vh;
+
+	position:relative;
+}
+
+.MenuButton:hover {
+	.MenuButtonBar {
+		background-color: transparent;
+	}
+
+	.MenuButtonBar::before,
+	.MenuButtonBar::after {
+		top: 0;
+	}
+
+	.MenuButtonBar::before {
+		transform: rotate(45deg);
+	}
+	.MenuButtonBar::after {
+		transform: rotate(-45deg);
+	}
+}
+
+.MenuButtonBar {
+	@include absolute-center;
+	@extend %menu-button-bar;
+
+	&::before {
+		@extend %menu-button-bar;
+		content: '';
+		height: 100%;
+		position: absolute;
+		// 25% per bar, 12.5%x2 white space between, 150% needed to offset
+		top: -150%;
+		transition: transform .5s, top .5s;
+	}
+
+	&::after {
+		@extend%menu-button-bar;
+		content: '';
+		height: 100%; 
+		position: absolute;
+		// 25% per bar, 12.5%x2 white space between, 150% needed to offset
+		top: 150%;
+		transition: transform .5s, top .5s;
+	}
+}
+
+.MenuButtonBar.clicked {
+	background-color: transparent;
+}
+
+.MenuButtonBar.clicked::before,
+.MenuButtonBar.clicked::after {
+	top: 0;
+}
+
+.MenuButtonBar.clicked::before {
+	transform: rotate(45deg);
+}
+.MenuButtonBar.clicked::after {
+	transform: rotate(-45deg);
+}
+
+.MenuItemOne {
+	@extend %menu-item;
+	transition: top 1s .3s, opacity 1s .3s;
+	&.clicked {
+		transition: top 1s, opacity 1s;
+	}
+}
+
+.MenuItemTwo {
+	@extend %menu-item;
+	transition: top 1s, opacity 1s;
+	&.clicked {
+		transition: top 1s .3s, opacity 1s .3s;
+	}
+}
+
+
+.Menu {
+	margin: 0;
+	padding: 0;
+	padding-top: 2vh;
+	width: 20vh;
+	min-width: 15vh;
+	max-width: 25vh;
+	min-height: 15vh;
+	max-height: 25vh;
+
+	overflow: visible;
+
+	position: relative;
+	left: 80%;
+
+	&.clicked {
+
+	}
+
+}
