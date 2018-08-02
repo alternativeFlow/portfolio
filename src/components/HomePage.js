@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import "../CSS/HomePage.css";
 
 import Menu from './Menu';
-import VideoCard from './VideoCard';
 import Card from './Card';
 
 import portfolioVideo from '../assets/portfolioVideo.mp4';
@@ -124,7 +123,7 @@ class HomePage extends React.Component {
 										</a>
 									</div>
 									<div className='CardLinkItem'>
-										<a className='fa fa-google' href='https://www.google.com'>
+										<a className='fa fa-window-maximize' href='https://www.google.com'>
 										</a>
 									</div>
 								</div>
@@ -143,10 +142,6 @@ class HomePage extends React.Component {
 								<div style={{display: 'contents'}}>
 									<div className='CardLinkItem'>
 										<a className='fa fa-github' href='https://www.github.com'>
-										</a>
-									</div>
-									<div className='CardLinkItem'>
-										<a className='fa fa-google' href='https://www.google.com'>
 										</a>
 									</div>
 								</div>
@@ -170,7 +165,15 @@ class HomePage extends React.Component {
 										</a>
 									</div>
 									<div className='CardLinkItem'>
-										<a className='fa fa-google' href='https://www.google.com'>
+										<a className='fa fa-window-maximize' href='https://www.google.com'>
+										</a>
+									</div>
+									<div className='CardLinkItem'>
+										<a className='fa fa-github' href='https://www.github.com'>
+										</a>
+									</div>
+									<div className='CardLinkItem'>
+										<a className='fa fa-window-maximize' href='https://www.google.com'>
 										</a>
 									</div>
 								</div>
@@ -194,6 +197,18 @@ class HomePage extends React.Component {
 						}
 					/>
 					<div className="ContactBox">
+						<div className="ContactItem">
+							<a className='fa fa-folder-o' href='https://www.google.com'>
+							</a>
+						</div>
+						<div className="ContactItem">
+							<a className='fa fa-github' href='https://www.github.com'>
+							</a>
+						</div>
+						<div className="ContactItem">
+							<a className='fa fa-mail-reply' href='https://www.google.com'>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
