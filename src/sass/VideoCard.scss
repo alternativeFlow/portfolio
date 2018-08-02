@@ -9,6 +9,12 @@
 	bottom: 10%;
 	overflow: hidden;
 	background-color: green;
+
+	&.clicked {
+		transition: transform 1s linear, box-shadow 0.01s .5s;
+		transform: rotateY(180deg);
+		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+	}
 }
 
 .Video {

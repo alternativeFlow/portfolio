@@ -5,10 +5,7 @@
   padding-top: 25vh;
   position: relative;
   box-shadow: 0.5vh 1vh 2vh rgba(0, 0, 0, 0.4);
-  transition: transform 1s linear;
-}
-.clicked.VideoCard {
-  transform: rotateY(180deg);
+  transition: transform 1s linear, box-shadow 0.01s 0.49s;
 }
 
 .AspectRatioBox {
@@ -25,6 +22,7 @@
   position: relative;
   grid-area: grid;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
@@ -35,6 +33,11 @@
   bottom: 10%;
   overflow: hidden;
   background-color: green;
+}
+.VideoCard.clicked {
+  transition: transform 1s linear, box-shadow 0.01s 0.5s;
+  transform: rotateY(180deg);
+  box-shadow: -0.5vh 1vh 2vh rgba(0, 0, 0, 0.4);
 }
 
 .Video {

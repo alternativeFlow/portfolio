@@ -7,20 +7,103 @@
 	bottom: 12vh;
 	right: 4vh;
 	transform: rotate(42deg);
+
+	&.clicked {
+		transition: transform 1s linear, box-shadow 0.01s .5s;
+		transform: rotate(42deg) rotateY(180deg);
+		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+
+	}
 }
 
 .CardPortfolio {
 	@extend %card;
 	bottom: 10vh;
 	left: 2vh;
+
+	&.clicked {
+		transition: transform 1s linear, box-shadow 0.01s .5s;
+		transform: rotateY(180deg);
+		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+	}
 }
 
 .CardMisc {
 	@extend %card;
 	transform: rotate(-20deg);
+
+	&.clicked {
+		transition: transform 1s linear, box-shadow 0.01s .5s;
+		transform: rotate(-20deg) rotateY(180deg);
+		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+	}
 }
 
 .CardTitle {
 	font-size: 10vh;
 	font-family: 'Open Sans', serif;
+
+	transition: opacity 0.01s .49s;
+
+	&.clicked {
+		opacity: 0;
+	}
+}
+
+.CardTextFlipped {
+	margin-left: 2vh;
+	margin-right: 2vh;
+	font-size: 2.5vh;
+	font-family: 'Open Sans', serif;
+
+	transform: rotateY(180deg);
+	
+	transition: opacity 0.01s .5s;
+	opacity: 0;
+
+	&.clicked {
+		opacity: 1;
+	}
+}
+
+.CardLinksFlipped {
+	position: relative;
+	bottom:	3.5vh;
+	left: 3vh;
+
+	width: 100%;
+
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: flex-start;
+	align-items: flex-start;
+
+	transform: rotateY(180deg);
+
+	transition: opacity 0.01s .5s;
+	opacity: 0;
+
+	&.clicked {
+		opacity: 1;
+	}
+
+}
+
+.CardLinkItem {
+	width: 7.5vh;
+	height: 7.5vh;
+	border-radius: 50%;
+	background-color: gray;
+
+	a {
+		position: relative;
+		top: 16.65%;
+		width: inherit;
+		height: inherit;
+		color: black;
+		opacity: 0.7;
+		font-size: 5vh;
+		text-decoration: none;
+		text-align: center;
+	}
 }

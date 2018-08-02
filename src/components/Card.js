@@ -9,26 +9,29 @@ class Card extends React.Component {
 			clicked: 'false',
 			ClassNames: {
 				Card: this.props.card,
-				CardTitle: 'CardTitle'
+				CardTitle: 'CardTitle',
+				CardTextFlipped: 'CardTextFlipped',
+				CardLinksFlipped: 'CardLinksFlipped'
 			}
 		};
 	}
 
 	handleClick = () => {
+		let oldClassNames = this.state.ClassNames;
 		if (this.state.clicked == 'false') {
 			let ClassNames = {};
-			Object.keys(this.state.ClassNames).forEach(key => {
-				ClassNames[key] = key + " clicked";
+			Object.keys(oldClassNames).forEach(key => {
+				ClassNames[key] = oldClassNames[key] + " clicked";
 			});
 			this.setState({
 				clicked: 'true',
 				ClassNames: ClassNames
-			})
+			});
 		}
 		else if (this.state.clicked == 'true') {
 			let ClassNames = {};
-			Object.keys(this.state.ClassNames).forEach(key => {
-				ClassNames[key] = key;
+			Object.keys(oldClassNames).forEach(key => {
+				ClassNames[key] = oldClassNames[key].substring(0, oldClassNames[key].indexOf(' '));
 			});
 			this.setState({
 				clicked: 'false',
@@ -40,7 +43,7 @@ class Card extends React.Component {
 	render() {
 
 		return(
-			<div className={this.state.ClassNames.Card}>
+			<div className={this.state.ClassNames.Card} onClick={this.handleClick}>
 				<div className="AspectRatioBox">
 					<div className="FlexBoxCentering">
 						<p className={this.state.ClassNames.CardTitle}>
@@ -48,8 +51,12 @@ class Card extends React.Component {
 						</p>
 					</div>
 					<div className="FlexBoxCentering">
-					</div>
-					<div className="FlexBoxCentering">
+						<p className={this.state.ClassNames.CardTextFlipped}>
+							{this.props.cardTextFlipped}
+						</p>
+						<div className={this.state.ClassNames.CardLinksFlipped}>
+							{this.props.cardLinksFlipped}
+						</div>
 					</div>
 				</div>
 			</div>
@@ -59,6 +66,8 @@ class Card extends React.Component {
 
 Card.propTypes = {
 	card: PropTypes.string.isRequired,
-	cardTitle: PropTypes.string
+	cardTitle: PropTypes.string,
+	cardTextFlipped: PropTypes.element,
+	cardLinksFlipped: PropTypes.element
 }
 export default Card;

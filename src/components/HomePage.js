@@ -46,16 +46,18 @@ class HomePage extends React.Component {
 			contactPage.setAttribute('style', 'transform: translateY('+(-topOffset)+'px)' );
 		}
 		//Second Page is 150%vh so some portion is scrolled normally
-		else if ((topOffset > viewHeight/2)&&(topOffset <= (viewHeight*0.7))) {
+		else if ((topOffset > viewHeight/2)&&(topOffset <= (viewHeight*0.6))) {
 			speed = 100;
 			yPos = -(topOffset * speed / 100);
+			titlePage.setAttribute('style', 'transform: translateY('+(-(topOffset*10/100))+'px); opacity:'+0+';' );
 			workPage.setAttribute('style', 'transform: translateY('+(-topOffset)+'px);' );
 			contactPage.setAttribute('style', 'transform: translateY('+(-topOffset)+'px)' );
 		}
-		else if ((topOffset > (viewHeight*0.7))&&(topOffset < (viewHeight*1.09))){
+		else if ((topOffset > (viewHeight*0.6))&&(topOffset < (viewHeight*1.09))){
 			speed = 10;
-			yPos = -(topOffset * speed / 100) - (viewHeight*0.65);
-			opacity = Math.max(0, 1-(topOffset-560)/titlePage.scrollHeight*2);
+			yPos = -(topOffset * speed / 100) - (viewHeight*0.55);
+			opacity = Math.max(0, 1-(topOffset-viewHeight*0.6)/titlePage.scrollHeight*2);
+
 			workPage.setAttribute('style', 'transform: translateY('+yPos+'px); opacity:'+opacity+';' );
 			contactPage.setAttribute('style', 'transform: translateY('+(-topOffset)+'px)' );
 		}
@@ -91,11 +93,48 @@ class HomePage extends React.Component {
 				<div className="WorkPageContainer" ref={this.workPageRef}>
 					<p className="WorkTitleText">Work</p>
 					<div className="CardLevel">
-						<Card card="CardEthRiddle" cardTitle="EthRiddle"/>
-						<Card card="CardPortfolio" cardTitle="Portfolio"/>
+						<Card 
+							card="CardEthRiddle" 
+							cardTitle="EthRiddle"
+							cardTextFlipped={
+								<p>
+									A web app built with:
+									<br/>React/Redux/ES6/Node/Solidity
+									<br/>Previously built with jQuery and PHP
+								</p>
+							}
+							cardLinksFlipped={
+								<div style={{display: 'contents'}}>
+									<div className='CardLinkItem'>
+										<a className='fa fa-github' href='https://www.github.com'>
+										</a>
+									</div>
+									<div className='CardLinkItem'>
+										<a className='fa fa-google' href='https://www.google.com'>
+										</a>
+									</div>
+								</div>
+							}/>
+						<Card 
+							card="CardPortfolio" 
+							cardTitle="Portfolio"
+							cardTextFlipped={
+								<p>
+									This site built with:
+									<br/>React/ES6/CSS3/SASS
+								</p>
+							}/>
 					</div>
 					<div className="CardLevel">
-						<Card card="CardMisc" cardTitle="Misc"/>
+						<Card 
+							card="CardMisc" 
+							cardTitle="Misc"
+							cardTextFlipped={
+								<p>
+									Alternate Portfolios:
+									<br/>Built with same stack as this portfolio
+								</p>
+							}/>
 					</div>
 				</div>
 				<div className="ContactPageContainer" ref={this.contactPageRef}>

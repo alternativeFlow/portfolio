@@ -13,6 +13,7 @@
   position: relative;
   grid-area: grid;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
