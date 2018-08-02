@@ -1,11 +1,10 @@
 @import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans");
 .VideoCard {
-  background-color: #F7FF58;
+  background-color: white;
   width: 50vh;
   padding-top: 25vh;
   position: relative;
   box-shadow: 0.5vh 1vh 2vh rgba(0, 0, 0, 0.25);
-  transition: transform 1s linear;
 }
 
 .AspectRatioBox {
@@ -29,7 +28,6 @@
 }
 
 .VideoCard {
-  grid-area: grid;
   display: block;
   bottom: 10%;
   overflow: hidden;
@@ -39,6 +37,7 @@
 }
 
 .Video {
+  grid-area: grid;
   position: absolute;
   top: 0;
   left: 0;

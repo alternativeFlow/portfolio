@@ -11,10 +11,28 @@ class HomePage extends React.Component {
 		this.state = {
 
 		};
+		this.containerRef = React.createRef();
+		this.titlePageRef = React.createRef();
+		this.workPageRef = React.createRef();
 	}
 
-	handleVideoCardFlip = () => {
+	componentDidMount() {
+		window.addEventListener('scroll', this.handleScroll);
+	}
 
+	componentWillUnmount() {
+		window.removeEventListener('scroll', this.handleScroll);
+	}
+
+	handleScroll = (event) => {
+		let top = window.pageYOffset;
+		let titlePage = this.titlePageRef.current;
+		let workPage = this.workPageRef.current;
+		var speed = 75
+		var yPos = -(top * 10 / 100);
+		var opacity = Math.max(0, 1-top/titlePage.scrollHeight);
+		titlePage.setAttribute('style', 'transform: translateY('+yPos+'px); opacity:'+opacity+';' );
+		workPage.setAttribute('style', 'transform: translateY('+(-top)+'px)' );
 	}
 
 	render() {

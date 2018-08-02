@@ -27,8 +27,7 @@
 
 .VideoCard {
 	@extend %card;
-	grid-area: grid;
-	
+
 	display: block;
 	bottom: 10%;
 	overflow: hidden;
@@ -39,6 +38,7 @@
 }
 
 .Video {
+	grid-area: grid;
 	position: absolute;
 	top: 0;
 	left: 0;
