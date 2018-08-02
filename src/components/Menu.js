@@ -19,7 +19,7 @@ class Menu extends React.Component {
 	}
 
 	handleClick = () => {
-		if (this.state.clicked == 'false') {
+		if (this.state.clicked === 'false') {
 			let ClassNames = {};
 			Object.keys(this.state.ClassNames).forEach(key => {
 				ClassNames[key] = key + " clicked";
@@ -29,7 +29,7 @@ class Menu extends React.Component {
 				ClassNames: ClassNames
 			});
 		}
-		else if (this.state.clicked == 'true') {
+		else if (this.state.clicked === 'true') {
 			let ClassNames = {};
 			Object.keys(this.state.ClassNames).forEach(key => {
 				ClassNames[key] = key;
@@ -41,6 +41,17 @@ class Menu extends React.Component {
 		}
 	}
 
+	handleItemOneClick = () => {
+		this.handleClick();
+		document.documentElement.scrollTop = window.innerHeight/2;
+	}
+
+	handleItemTwoClick = () => {
+		this.handleClick();
+		this.props.refs.workPageRef.current.setAttribute('style', 'transform: translateY('+(-window.innerHeight/2)+'px)');
+		document.documentElement.scrollTop = window.innerHeight*1.11;	
+	}
+
 	render() {
 
 		return(
@@ -49,15 +60,19 @@ class Menu extends React.Component {
 					<div className={this.state.ClassNames.MenuButtonBar}>
 					</div>
 				</div>
-				<p className={this.state.ClassNames.MenuItemOne}>
+				<p className={this.state.ClassNames.MenuItemOne} onClick={this.handleItemOneClick}>
 					Work
 				</p>
-				<p className={this.state.ClassNames.MenuItemTwo}>
+				<p className={this.state.ClassNames.MenuItemTwo} onClick={this.handleItemTwoClick}>
 					Contact
 				</p>
 			</div>
 		);
 	}
+}
+
+Menu.propTypes = {
+	refs: PropTypes.shape({}).isRequired
 }
 
 export default Menu;

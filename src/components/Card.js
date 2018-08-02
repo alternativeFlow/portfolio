@@ -19,7 +19,7 @@ class Card extends React.Component {
 
 	handleClick = () => {
 		let oldClassNames = this.state.ClassNames;
-		if (this.state.clicked == 'false') {
+		if (this.state.clicked === 'false') {
 			let ClassNames = {};
 			Object.keys(oldClassNames).forEach(key => {
 				ClassNames[key] = oldClassNames[key] + " clicked";
@@ -29,7 +29,7 @@ class Card extends React.Component {
 				ClassNames: ClassNames
 			});
 		}
-		else if (this.state.clicked == 'true') {
+		else if (this.state.clicked === 'true') {
 			let ClassNames = {};
 			Object.keys(oldClassNames).forEach(key => {
 				ClassNames[key] = oldClassNames[key].substring(0, oldClassNames[key].indexOf(' '));
@@ -63,9 +63,9 @@ class Card extends React.Component {
 						)}
 					</div>
 					<div className="FlexBoxCentering">
-						<p className={this.state.ClassNames.CardTextFlipped}>
+						<div className={this.state.ClassNames.CardTextFlipped}>
 							{this.props.cardTextFlipped}
-						</p>
+						</div>
 						<div className={this.state.ClassNames.CardLinksFlipped}>
 							{this.props.cardLinksFlipped}
 						</div>

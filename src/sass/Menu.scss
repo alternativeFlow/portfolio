@@ -28,9 +28,12 @@
 
 	opacity: 0;
 
+	pointer-events: none;
+
 	&.clicked {
 		top: 7vh;
 		opacity: 1;
+		pointer-events: auto;
 	}
 }
 

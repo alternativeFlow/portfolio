@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans");
 .CardContactPage, .CardMisc, .CardPortfolio, .CardEthRiddle, .CardTitlePage {
-  background-color: white;
+  background-color: #616244;
   width: 50vh;
   padding-top: 25vh;
   position: relative;

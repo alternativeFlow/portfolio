@@ -59,7 +59,7 @@ class HomePage extends React.Component {
 			speed = 10;
 			yPos = -(topOffset * speed / 100) - (viewHeight*0.55);
 			opacity = Math.max(0, 1-(topOffset-viewHeight*0.6)/titlePage.scrollHeight*2);
-
+			titlePage.setAttribute('style', 'transform: translateY('+(-(topOffset*10/100))+'px); opacity:'+0+';' );
 			workPage.setAttribute('style', 'transform: translateY('+yPos+'px); opacity:'+opacity+';' );
 			contactPage.setAttribute('style', 'transform: translateY('+(-topOffset)+'px)' );
 		}
@@ -84,6 +84,10 @@ class HomePage extends React.Component {
 	};
 
 	render() {
+		//For Menu scroll
+		let refs = {
+			workPageRef: this.workPageRef
+		}
 
 		return(
 			<div className="Container" ref={this.containerRef}>
@@ -91,7 +95,7 @@ class HomePage extends React.Component {
 					<video className='Video' muted loop autoPlay>
 						<source src={portfolioVideo} type="video/mp4"/>
 					</video>
-					<Menu />
+					<Menu refs={refs}/>
 					<p className="TitleText">Developer</p>
 					<Card 
 						card="CardTitlePage" 
@@ -188,7 +192,7 @@ class HomePage extends React.Component {
 					<Card 
 						card="CardContactPage" 
 						cardImage={
-							<img src={portfolioPic} style={{width: '10vh', height: '10vh', 'border-radius': '50%'}}/>
+							<img src={portfolioPic} style={{width: '10vh', height: '10vh', borderRadius: '50%'}}/>
 						}
 						cardTextFlipped={
 							<p>
