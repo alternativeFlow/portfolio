@@ -56,7 +56,7 @@ class VideoCard extends React.Component {
 					</div>
 					<div className="FlexBoxCentering">
 						<p className={this.state.ClassNames.VideoTextFlipped}>
-							Flipped
+							Check the backs for more info!
 						</p>
 					</div>
 				</div>

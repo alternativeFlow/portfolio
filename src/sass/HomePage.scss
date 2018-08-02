@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=La+Belle+Aurore|Open+Sans');
+@import 'utilityClasses';
 
 %card {
 	background-color: #F7FF58;
@@ -20,9 +21,8 @@ body {
 
 .Container {
 	width: 100vw;
-	height: 250vh;
+	height: 200vh;
 
-	background-color: red;
 }
 
 
@@ -51,7 +51,6 @@ body {
 	padding: 0;
 
 	position: relative;
-	bottom: 10%;
 	font-size: 20vh;
 	font-family: 'La Belle Aurore', serif;
 
@@ -71,4 +70,22 @@ body {
 	background-color: #5E565A;
 
 	z-index: 2;
+}
+
+// 3/3 of page
+.ContactPageContainer {
+	position: relative;
+	top: 0;
+	left: 0;
+	margin: 0;
+	padding: 0;
+
+	width: 100vw;
+	height: 102vh;
+
+	background-color: white;
+
+	color: black;
+
+	z-index: 3;
 }

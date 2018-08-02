@@ -4,7 +4,8 @@
   width: 50vh;
   padding-top: 25vh;
   position: relative;
-  box-shadow: 0.5vh 1vh 2vh rgba(0, 0, 0, 0.25);
+  box-shadow: 0.5vh 1vh 2vh rgba(0, 0, 0, 0.4);
+  transition: transform 1s linear;
 }
 
 .AspectRatioBox {
@@ -31,6 +32,7 @@
   display: block;
   bottom: 10%;
   overflow: hidden;
+  background-color: green;
 }
 .VideoCard.clicked {
   transform: rotateY(180deg);
