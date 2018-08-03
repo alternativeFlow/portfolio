@@ -18,7 +18,24 @@
   opacity: 1;
   pointer-events: auto;
 }
+.MenuItemTwo:hover, .MenuItemOne:hover {
+  animation: shake 0.25s infinite;
+}
 
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(7.5deg);
+  }
+  75% {
+    transform: rotate(-7.5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
 .MenuButtonBar::after, .MenuButtonBar::before, .MenuButtonBar {
   width: 100%;
   height: 25%;

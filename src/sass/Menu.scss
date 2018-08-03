@@ -35,6 +35,25 @@
 		opacity: 1;
 		pointer-events: auto;
 	}
+
+	&:hover {
+		animation: shake .25s infinite;
+	}
+}
+
+@keyframes shake {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(7.5deg);
+	}
+	75% {
+		transform:rotate(-7.5deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }
 
 %menu-button-bar {

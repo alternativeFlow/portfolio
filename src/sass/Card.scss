@@ -12,6 +12,16 @@
 		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
 
 	}
+
+	&:hover {
+		transition: bottom .25s, transform 1s linear, box-shadow 0.01s .49s;
+		bottom: 8vh;
+
+		&.clicked {
+			transform: rotateY(180deg);
+			box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+		}
+	}
 }
 
 .CardEthRiddle {
@@ -24,7 +34,16 @@
 		transition: transform 1s linear, box-shadow 0.01s .5s;
 		transform: rotate(42deg) rotateY(180deg);
 		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+	}
 
+	&:hover {
+		transition: bottom .25s, transform 1s linear, box-shadow 0.01s .49s;
+		bottom: 13vh;
+
+		&.clicked {
+			transform: rotate(42deg) rotateY(180deg);
+			box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+		}
 	}
 }
 
@@ -38,6 +57,16 @@
 		transform: rotateY(180deg);
 		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
 	}
+
+	&:hover {
+		transition: bottom .25s, transform 1s linear, box-shadow 0.01s .49s;
+		bottom: 11vh;
+
+		&.clicked {
+			transform: rotateY(180deg);
+			box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+		}
+	}
 }
 
 .CardMisc {
@@ -48,6 +77,16 @@
 		transition: transform 1s linear, box-shadow 0.01s .5s;
 		transform: rotate(-20deg) rotateY(180deg);
 		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+	}
+
+	&:hover {
+		transition: bottom .25s, transform 1s linear, box-shadow 0.01s .49s;
+		bottom: 1vh;
+
+		&.clicked {
+			transform: rotate(-20deg) rotateY(180deg);
+			box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+		}
 	}
 }
 
@@ -63,6 +102,16 @@
 		transition: transform 1s linear, box-shadow 0.01s .5s;
 		transform: translate(-1vh, 15vh) rotate(55deg) rotateY(180deg);
 		box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+	}
+
+	&:hover {
+		transition: bottom .25s, transform 1s linear, box-shadow 0.01s .49s;
+		bottom: 1vh;
+
+		&.clicked {
+			transform: translate(-1vh, 15vh) rotate(55deg) rotateY(180deg);
+			box-shadow: -.5vh 1vh 2vh rgba(0,0,0, .4);
+		}
 	}
 }
 
@@ -105,7 +154,7 @@
 
 .CardLinksFlipped {
 	position: relative;
-	bottom:	3.5vh;
+	bottom:	1vh;
 	left: 3vh;
 
 	width: 100%;

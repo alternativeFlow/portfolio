@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import "../CSS/HomePage.css";
 
 import Menu from './Menu';
@@ -83,6 +84,14 @@ class HomePage extends React.Component {
 		}
 	};
 
+	handleResumeClick = () => {
+		
+	};
+
+	handleMailClick = () => {
+		alert('danxue@gmail.com');
+	}
+
 	render() {
 		//For Menu scroll
 		let refs = {
@@ -123,11 +132,15 @@ class HomePage extends React.Component {
 							cardLinksFlipped={
 								<div style={{display: 'contents'}}>
 									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://www.github.com'>
+										<a className='fa fa-github' href='https://github.com/alternativeFlow/ethriddle-react'>
 										</a>
 									</div>
 									<div className='CardLinkItem'>
-										<a className='fa fa-window-maximize' href='https://www.google.com'>
+										<a className='fa fa-github' href='https://github.com/alternativeFlow/ethriddle-api'>
+										</a>
+									</div>
+									<div className='CardLinkItem'>
+										<a className='fa fa-window-maximize' href='https://ethriddle.herokuapp.com'>
 										</a>
 									</div>
 								</div>
@@ -145,7 +158,7 @@ class HomePage extends React.Component {
 							cardLinksFlipped={
 								<div style={{display: 'contents'}}>
 									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://www.github.com'>
+										<a className='fa fa-github' href='https://github.com/alternativeFlow/portfolio'>
 										</a>
 									</div>
 								</div>
@@ -165,19 +178,19 @@ class HomePage extends React.Component {
 							cardLinksFlipped={
 								<div style={{display: 'contents'}}>
 									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://www.github.com'>
+										<a className='fa fa-github' href='https://github.com/alternativeFlow/alternatePortfolio'>
 										</a>
 									</div>
 									<div className='CardLinkItem'>
-										<a className='fa fa-window-maximize' href='https://www.google.com'>
+										<a className='fa fa-window-maximize' href='https://danxue.herokuapp.com'>
 										</a>
 									</div>
 									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://www.github.com'>
+										<a className='fa fa-github' href='https://github.com/alternativeFlow/webPortfolio'>
 										</a>
 									</div>
 									<div className='CardLinkItem'>
-										<a className='fa fa-window-maximize' href='https://www.google.com'>
+										<a className='fa fa-window-maximize' href='https://danxue-portfolio.herokuapp.com'>
 										</a>
 									</div>
 								</div>
@@ -192,7 +205,7 @@ class HomePage extends React.Component {
 					<Card 
 						card="CardContactPage" 
 						cardImage={
-							<img src={portfolioPic} style={{width: '10vh', height: '10vh', borderRadius: '50%'}}/>
+							<img src={portfolioPic} style={{width: '10vh', height: '10vh', borderRadius: '50%'}} alt=''/>
 						}
 						cardTextFlipped={
 							<p>
@@ -202,15 +215,15 @@ class HomePage extends React.Component {
 					/>
 					<div className="ContactBox">
 						<div className="ContactItem">
-							<a className='fa fa-folder-o' href='https://www.google.com'>
+							<Link className='fa fa-folder-o' to="/resume">
+							</Link>
+						</div>
+						<div className="ContactItem">
+							<a className='fa fa-github' href='https://github.com/alternativeFlow'>
 							</a>
 						</div>
 						<div className="ContactItem">
-							<a className='fa fa-github' href='https://www.github.com'>
-							</a>
-						</div>
-						<div className="ContactItem">
-							<a className='fa fa-mail-reply' href='https://www.google.com'>
+							<a className='fa fa-mail-reply' onClick={this.handleMailClick}>
 							</a>
 						</div>
 					</div>
