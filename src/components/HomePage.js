@@ -100,6 +100,7 @@ class HomePage extends React.Component {
 
 		return(
 			<div className="Container" ref={this.containerRef}>
+
 				<div className="TitlePageContainer" ref={this.titlePageRef}>
 					<video className='Video' muted loop autoPlay>
 						<source src={portfolioVideo} type="video/mp4"/>
@@ -116,6 +117,7 @@ class HomePage extends React.Component {
 						}
 					/>
 				</div>
+
 				<div className="WorkPageContainer" ref={this.workPageRef}>
 					<p className="WorkTitleText">Work</p>
 					<div className="CardLevel">
@@ -198,6 +200,7 @@ class HomePage extends React.Component {
 						/>
 					</div>
 				</div>
+				
 				<div className="ContactPageContainer" ref={this.contactPageRef}>
 					<p className="ContactTitleText">
 						Contact
