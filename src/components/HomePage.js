@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import "../CSS/HomePage.css";
 
+import Loader from './Loader';
 import Menu from './Menu';
 import Card from './Card';
 
@@ -13,7 +14,7 @@ class HomePage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-
+			
 		};
 		this.containerRef = React.createRef();
 		this.titlePageRef = React.createRef();
@@ -99,135 +100,138 @@ class HomePage extends React.Component {
 		}
 
 		return(
-			<div className="Container" ref={this.containerRef}>
+			<div>
+				<Loader />
+				<div className="Container" ref={this.containerRef}>
 
-				<div className="TitlePageContainer" ref={this.titlePageRef}>
-					<video className='Video' muted loop autoPlay>
-						<source src={portfolioVideo} type="video/mp4"/>
-					</video>
-					<Menu refs={refs}/>
-					<p className="TitleText">Developer</p>
-					<Card 
-						card="CardTitlePage" 
-						cardTitle="Click Me!"
-						cardTextFlipped={
-							<p>
-								Check the backs for more info!
-							</p>
-						}
-					/>
-				</div>
-
-				<div className="WorkPageContainer" ref={this.workPageRef}>
-					<p className="WorkTitleText">Work</p>
-					<div className="CardLevel">
+					<div className="TitlePageContainer" ref={this.titlePageRef}>
+						<video className='Video' muted loop autoPlay>
+							<source src={portfolioVideo} type="video/mp4"/>
+						</video>
+						<Menu refs={refs}/>
+						<p className="TitleText">Developer</p>
 						<Card 
-							card="CardEthRiddle" 
-							cardTitle="EthRiddle"
+							card="CardTitlePage" 
+							cardTitle="Click Me!"
 							cardTextFlipped={
 								<p>
-									A web app built with:
-									<br/>React/Redux/ES6/Node/Solidity
-									<br/>Previously built with jQuery and PHP
+									Check the backs for more info!
 								</p>
-							}
-							cardLinksFlipped={
-								<div style={{display: 'contents'}}>
-									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://github.com/alternativeFlow/ethriddle-react'>
-										</a>
-									</div>
-									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://github.com/alternativeFlow/ethriddle-api'>
-										</a>
-									</div>
-									<div className='CardLinkItem'>
-										<a className='fa fa-window-maximize' href='https://ethriddle.herokuapp.com'>
-										</a>
-									</div>
-								</div>
-							}
-						/>
-						<Card 
-							card="CardPortfolio" 
-							cardTitle="Portfolio"
-							cardTextFlipped={
-								<p>
-									This site built with:
-									<br/>React/ES6/CSS3/SASS
-								</p>
-							}
-							cardLinksFlipped={
-								<div style={{display: 'contents'}}>
-									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://github.com/alternativeFlow/portfolio'>
-										</a>
-									</div>
-								</div>
 							}
 						/>
 					</div>
-					<div className="CardLevel">
+
+					<div className="WorkPageContainer" ref={this.workPageRef}>
+						<p className="WorkTitleText">Work</p>
+						<div className="CardLevel">
+							<Card 
+								card="CardEthRiddle" 
+								cardTitle="EthRiddle"
+								cardTextFlipped={
+									<p>
+										A web app built with:
+										<br/>React/Redux/ES6/Node/Solidity
+										<br/>Previously built with jQuery and PHP
+									</p>
+								}
+								cardLinksFlipped={
+									<div style={{display: 'contents'}}>
+										<div className='CardLinkItem'>
+											<a className='fa fa-github' href='https://github.com/alternativeFlow/ethriddle-react'>
+											</a>
+										</div>
+										<div className='CardLinkItem'>
+											<a className='fa fa-github' href='https://github.com/alternativeFlow/ethriddle-api'>
+											</a>
+										</div>
+										<div className='CardLinkItem'>
+											<a className='fa fa-window-maximize' href='https://ethriddle.herokuapp.com'>
+											</a>
+										</div>
+									</div>
+								}
+							/>
+							<Card 
+								card="CardPortfolio" 
+								cardTitle="Portfolio"
+								cardTextFlipped={
+									<p>
+										This site built with:
+										<br/>React/ES6/CSS3/SASS
+									</p>
+								}
+								cardLinksFlipped={
+									<div style={{display: 'contents'}}>
+										<div className='CardLinkItem'>
+											<a className='fa fa-github' href='https://github.com/alternativeFlow/portfolio'>
+											</a>
+										</div>
+									</div>
+								}
+							/>
+						</div>
+						<div className="CardLevel">
+							<Card 
+								card="CardMisc" 
+								cardTitle="Misc"
+								cardTextFlipped={
+									<p>
+										Alternate Portfolios:
+										<br/>Built with same stack as this portfolio
+									</p>
+								}
+								cardLinksFlipped={
+									<div style={{display: 'contents'}}>
+										<div className='CardLinkItem'>
+											<a className='fa fa-github' href='https://github.com/alternativeFlow/alternatePortfolio'>
+											</a>
+										</div>
+										<div className='CardLinkItem'>
+											<a className='fa fa-window-maximize' href='https://danxue.herokuapp.com'>
+											</a>
+										</div>
+										<div className='CardLinkItem'>
+											<a className='fa fa-github' href='https://github.com/alternativeFlow/webPortfolio'>
+											</a>
+										</div>
+										<div className='CardLinkItem'>
+											<a className='fa fa-window-maximize' href='https://danxue-portfolio.herokuapp.com'>
+											</a>
+										</div>
+									</div>
+								}
+							/>
+						</div>
+					</div>
+					
+					<div className="ContactPageContainer" ref={this.contactPageRef}>
+						<p className="ContactTitleText">
+							Contact
+						</p>
 						<Card 
-							card="CardMisc" 
-							cardTitle="Misc"
+							card="CardContactPage" 
+							cardImage={
+								<img src={portfolioPic} style={{width: '10vh', height: '10vh', borderRadius: '50%'}} alt=''/>
+							}
 							cardTextFlipped={
 								<p>
-									Alternate Portfolios:
-									<br/>Built with same stack as this portfolio
+									“It's a dangerous business, Frodo, going out your door. You step onto the road, and if you don't keep your feet, there's no knowing where you might be swept off to.” ― J.R.R. Tolkien, The Lord of the Rings	
 								</p>
 							}
-							cardLinksFlipped={
-								<div style={{display: 'contents'}}>
-									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://github.com/alternativeFlow/alternatePortfolio'>
-										</a>
-									</div>
-									<div className='CardLinkItem'>
-										<a className='fa fa-window-maximize' href='https://danxue.herokuapp.com'>
-										</a>
-									</div>
-									<div className='CardLinkItem'>
-										<a className='fa fa-github' href='https://github.com/alternativeFlow/webPortfolio'>
-										</a>
-									</div>
-									<div className='CardLinkItem'>
-										<a className='fa fa-window-maximize' href='https://danxue-portfolio.herokuapp.com'>
-										</a>
-									</div>
-								</div>
-							}
 						/>
-					</div>
-				</div>
-				
-				<div className="ContactPageContainer" ref={this.contactPageRef}>
-					<p className="ContactTitleText">
-						Contact
-					</p>
-					<Card 
-						card="CardContactPage" 
-						cardImage={
-							<img src={portfolioPic} style={{width: '10vh', height: '10vh', borderRadius: '50%'}} alt=''/>
-						}
-						cardTextFlipped={
-							<p>
-								“It's a dangerous business, Frodo, going out your door. You step onto the road, and if you don't keep your feet, there's no knowing where you might be swept off to.” ― J.R.R. Tolkien, The Lord of the Rings	
-							</p>
-						}
-					/>
-					<div className="ContactBox">
-						<div className="ContactItem">
-							<Link className='fa fa-folder-o' to="/resume">
-							</Link>
-						</div>
-						<div className="ContactItem">
-							<a className='fa fa-github' href='https://github.com/alternativeFlow'>
-							</a>
-						</div>
-						<div className="ContactItem">
-							<a className='fa fa-mail-reply' onClick={this.handleMailClick}>
-							</a>
+						<div className="ContactBox">
+							<div className="ContactItem">
+								<Link className='fa fa-folder-o' to="/resume">
+								</Link>
+							</div>
+							<div className="ContactItem">
+								<a className='fa fa-github' href='https://github.com/alternativeFlow'>
+								</a>
+							</div>
+							<div className="ContactItem">
+								<a className='fa fa-mail-reply' onClick={this.handleMailClick}>
+								</a>
+							</div>
 						</div>
 					</div>
 				</div>
