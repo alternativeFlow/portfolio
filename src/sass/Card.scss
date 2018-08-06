@@ -196,3 +196,62 @@
 		text-align: center;
 	}
 }
+
+
+//Mobile Responsiveness
+
+@media (max-width: 1000px) {
+
+	.CardEthRiddle {
+		margin: 1vh;
+
+		bottom: 0;
+		right: 0;
+		transform: rotate(0deg);
+
+		&.clicked {
+			transform: rotateY(180deg);
+		}
+
+		&:hover {
+			bottom: 1vh;
+
+			&.clicked {
+				transform: rotateY(180deg);
+			}
+		}
+	}
+
+	.CardPortfolio {
+		margin: 1vh;
+
+		bottom: 0;
+		left: 0;
+
+		&.clicked {
+			transform: rotateY(180deg);
+		}
+
+		&:hover {
+			bottom: 1vh;
+		}
+	}
+
+	.CardMisc {
+		margin: 1vh;
+
+		transform: rotate(0deg);
+
+		&.clicked {
+			transform: rotateY(180deg);
+		}
+
+		&:hover {
+			bottom: 1vh;
+
+			&.clicked {
+				transform: rotateY(180deg);
+			}
+		}
+	}
+}

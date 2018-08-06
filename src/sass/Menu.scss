@@ -65,6 +65,9 @@
 	display: block;
 }
 
+
+//Regular Screen
+
 .MenuButton {
 	width: 20vh;
 	padding-top: 20vh;
@@ -164,8 +167,19 @@
 	position: relative;
 	left: 35%;
 
-	&.clicked {
+	z-index: 5;
 
+}
+
+
+//Mobile/Small Screen Responsiveness Section
+
+@media (max-width: 1325px) {
+	.Menu {
+		left: 0;
 	}
 
+	.MenuItemOne.clicked {
+		transition: top 1s, opacity 1s;
+	}
 }

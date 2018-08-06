@@ -14,7 +14,7 @@ class HomePage extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+			TitleTextClassName: "TitleText"
 		};
 		this.containerRef = React.createRef();
 		this.titlePageRef = React.createRef();
@@ -85,13 +85,22 @@ class HomePage extends React.Component {
 		}
 	};
 
-	handleResumeClick = () => {
-		
-	};
-
 	handleMailClick = () => {
 		alert('danxue@gmail.com');
-	}
+	};
+	//hideTitle is a bool given based on whether menu is clicked or not
+	onMenuClickDetectionForTitle = (hideTitle) => {
+		if (hideTitle) {
+			this.setState({
+				TitleTextClassName: "TitleText HideTitle"
+			})
+		}
+		else if (!hideTitle) {
+			this.setState({
+				TitleTextClassName: "TitleText"
+			})
+		}
+	};
 
 	render() {
 		//For Menu scroll
@@ -108,8 +117,8 @@ class HomePage extends React.Component {
 						<video className='Video' muted loop autoPlay>
 							<source src={portfolioVideo} type="video/mp4"/>
 						</video>
-						<Menu refs={refs}/>
-						<p className="TitleText">Developer</p>
+						<Menu onMenuClickDetectionForTitle={this.onMenuClickDetectionForTitle} refs={refs}/>
+						<p className={this.state.TitleTextClassName}>Developer</p>
 						<Card 
 							card="CardTitlePage" 
 							cardTitle="Click Me!"

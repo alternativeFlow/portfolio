@@ -185,4 +185,48 @@
   text-align: center;
 }
 
+@media (max-width: 1000px) {
+  .CardEthRiddle {
+    margin: 1vh;
+    bottom: 0;
+    right: 0;
+    transform: rotate(0deg);
+  }
+  .CardEthRiddle.clicked {
+    transform: rotateY(180deg);
+  }
+  .CardEthRiddle:hover {
+    bottom: 1vh;
+  }
+  .CardEthRiddle:hover.clicked {
+    transform: rotateY(180deg);
+  }
+
+  .CardPortfolio {
+    margin: 1vh;
+    bottom: 0;
+    left: 0;
+  }
+  .CardPortfolio.clicked {
+    transform: rotateY(180deg);
+  }
+  .CardPortfolio:hover {
+    bottom: 1vh;
+  }
+
+  .CardMisc {
+    margin: 1vh;
+    transform: rotate(0deg);
+  }
+  .CardMisc.clicked {
+    transform: rotateY(180deg);
+  }
+  .CardMisc:hover {
+    bottom: 1vh;
+  }
+  .CardMisc:hover.clicked {
+    transform: rotateY(180deg);
+  }
+}
+
 /*# sourceMappingURL=Card.css.map */

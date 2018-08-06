@@ -20,6 +20,8 @@ class Menu extends React.Component {
 
 	handleClick = () => {
 		if (this.state.clicked === 'false') {
+			this.props.onMenuClickDetectionForTitle(true);
+
 			let ClassNames = {};
 			Object.keys(this.state.ClassNames).forEach(key => {
 				ClassNames[key] = key + " clicked";
@@ -30,6 +32,8 @@ class Menu extends React.Component {
 			});
 		}
 		else if (this.state.clicked === 'true') {
+			this.props.onMenuClickDetectionForTitle(false);
+
 			let ClassNames = {};
 			Object.keys(this.state.ClassNames).forEach(key => {
 				ClassNames[key] = key;
@@ -39,18 +43,21 @@ class Menu extends React.Component {
 				ClassNames: ClassNames
 			});
 		}
-	}
+	};
 
 	handleItemOneClick = () => {
 		this.handleClick();
+		//Scroll down to work page
 		document.documentElement.scrollTop = window.innerHeight/2;
-	}
+	};
 
 	handleItemTwoClick = () => {
 		this.handleClick();
+		//Move Work Page up to get it out of the way
 		this.props.refs.workPageRef.current.setAttribute('style', 'transform: translateY('+(-window.innerHeight/2)+'px)');
+		//Scroll down to contact page
 		document.documentElement.scrollTop = window.innerHeight*1.11;	
-	}
+	};
 
 	render() {
 
@@ -72,7 +79,8 @@ class Menu extends React.Component {
 }
 
 Menu.propTypes = {
-	refs: PropTypes.shape({}).isRequired
+	refs: PropTypes.shape({}).isRequired,
+	onMenuClickDetectionForTitle: PropTypes.func.isRequired
 }
 
 export default Menu;

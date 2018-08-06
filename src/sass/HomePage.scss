@@ -42,7 +42,7 @@ body {
 
 }
 
-.TitleText{
+.TitleText {
 	margin: 0;
 	margin-bottom: 10vh;
 	padding: 0;
@@ -175,4 +175,25 @@ body {
 		text-align: center;
 	}
 
+}
+
+
+//Mobile/Small Screen Responsiveness Section
+
+@media (max-width: 1325px) {
+	.TitleText {
+		transition: opacity .5s .75s;
+		z-index: 4;
+
+	}
+	.HideTitle {
+		transition: opacity .25s;
+		opacity: 0;
+	}
+}
+
+@media (max-width: 1000px) {
+	.CardLevel {
+		flex-direction: column;
+	}
 }

@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import "../CSS/Loader.css";
 
-import fish from '../assets/fish.svg';
-
 class Loader extends React.Component {
 	constructor(props) {
 		super(props);

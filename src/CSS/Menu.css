@@ -131,6 +131,17 @@
   overflow: visible;
   position: relative;
   left: 35%;
+  z-index: 5;
+}
+
+@media (max-width: 1325px) {
+  .Menu {
+    left: 0;
+  }
+
+  .MenuItemOne.clicked {
+    transition: top 1s, opacity 1s;
+  }
 }
 
 /*# sourceMappingURL=Menu.css.map */
